@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Model weights — these belong on Hugging Face Hub, never in this git repo
+final_merged/
+dharwad-lora-model/
+*.safetensors
+*.bin
+*.pt
+
+# Local env / secrets
+.env
+
+# OS
+.DS_Store

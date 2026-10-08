@@ -1,0 +1,17 @@
+# Pinned to match the versions confirmed working during training/fine-tuning.
+# Do not loosen these without testing — transformers/huggingface_hub/numpy
+# have proven version-sensitive with IndicTransToolkit (see project history).
+torch==2.4.1
+torchvision==0.19.1
+torchaudio==2.4.1
+transformers==4.48.0
+huggingface_hub==0.26.2
+numpy>=1.26,<2.0
+sentencepiece
+sacremoses
+sounddevice
+soundfile
+faster-whisper
+indictranstoolkit
+indic-nlp-library
+git+https://github.com/huggingface/parler-tts.git
