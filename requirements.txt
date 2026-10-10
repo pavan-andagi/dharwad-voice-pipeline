@@ -14,4 +14,7 @@ soundfile
 faster-whisper
 indictranstoolkit
 indic-nlp-library
-git+https://github.com/huggingface/parler-tts.git
+
+# parler-tts is installed separately with --no-deps (see README) —
+# it pins transformers==4.46.1 exactly, which conflicts with the
+# transformers==4.48.0 pin above that IndicTransToolkit needs.

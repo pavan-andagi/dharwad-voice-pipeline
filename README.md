@@ -70,6 +70,12 @@ git clone git@github.com:<your-username>/dharwad-voice-pipeline.git
 cd dharwad-voice-pipeline
 python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
+
+# parler-tts pins transformers==4.46.1 exactly, which conflicts with the
+# transformers==4.48.0 this project needs for IndicTransToolkit. Install it
+# separately with --no-deps so it doesn't downgrade transformers:
+pip install git+https://github.com/huggingface/parler-tts.git --no-deps
+
 python dharwad_voice_pipeline.py
 ```
 
