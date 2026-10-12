@@ -68,7 +68,14 @@ call will pick it up.
 ```bash
 git clone git@github.com:<your-username>/dharwad-voice-pipeline.git
 cd dharwad-voice-pipeline
-python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+python3.12 -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\activate
+
+# Install torch CPU-only first, as its own step — listing it in requirements.txt
+# would pull the much larger CUDA-enabled build even with no GPU present.
+# Skip this and use plain `pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1`
+# instead if you do have an NVIDIA GPU and want acceleration.
+pip install torch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 --index-url https://download.pytorch.org/whl/cpu
+
 pip install -r requirements.txt
 
 # parler-tts pins transformers==4.46.1 exactly, which conflicts with the
